@@ -22,30 +22,51 @@
     <main class="container">
       <div class="input-calcs-container">
         <div class="bill-container">
-          <label for="bill">Bill</label>
-          <input type="text" placeholder="0" maxlength="50" />
+          <label for="bill" class="input-heading">Bill</label>
+          <div class="input-with-image">
+            <input
+              type="number"
+              id="bill"
+              class="text-input dollar-img"
+              name="bill"
+              placeholder="0"
+              step="0.01"
+              min="0"
+              inputmode="decimal"
+              autocomplete="off"
+            />
+          </div>
         </div>
         <div class="tip-container">
-          <p>Select Tip %</p>
+          <p class="input-heading">Select Tip %</p>
           <div class="button-grid">
             <button class="btn btn-tip">5%</button>
             <button class="btn btn-tip">10%</button>
             <button class="btn btn-tip">15%</button>
             <button class="btn btn-tip">25%</button>
             <button class="btn btn-tip">50%</button>
-            <button class="btn">
-              <input
-                type="text"
-                name="custom"
-                id="custom"
-                maxlength="4"
-              />Custom
-            </button>
+            <input
+              class="text-input btn"
+              type="text"
+              name="custom"
+              id="custom"
+              maxlength="4"
+              placeholder="Custom"
+            />
           </div>
         </div>
         <div class="number-of-people-container">
-          <label for="number-of-people">Number of People</label>
-          <input type="text" placeholder="0" />
+          <label for="number-of-people" class="input-heading"
+            >Number of People</label
+          >
+          <div class="input-with-image">
+            <input
+              id="number-of-people"
+              class="text-input person-img"
+              type="text"
+              placeholder="0"
+            />
+          </div>
         </div>
       </div>
       <div class="out-calcs-container">

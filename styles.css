@@ -78,7 +78,7 @@ h1 {
         gap: 4.8rem;
     }
 
-    .input-calcs-container, .output-calcs-container {
+    .input-calcs-container, .out-calcs-container {
         max-width: 50%;
     }
 }
@@ -103,6 +103,10 @@ h1 {
      font-size: inherit;
     font-weight: inherit;
     
+}
+
+.text-input::placeholder {
+    font-family: var(--ff);
 }
 
 
@@ -179,5 +183,40 @@ h1 {
     .button-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Output */
+
+.out-calcs-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.4rem 3.2rem;
+}
+
+.tip-amount {
+    margin-bottom: 2.4rem;
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.per-person {
+    font-size: 1.3rem;
+    color: var(--grey-400);
+}
+
+.result {
+    color: var(--clr-secondary);
+    font-size: 3.2rem;
+}
+
+@media screen and (min-width: 600px) {
+    .result {
+        font-size: 4.8rem;
     }
 }

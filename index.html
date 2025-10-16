@@ -22,7 +22,9 @@
     <main class="container">
       <div class="input-calcs-container">
         <div class="bill-container">
-          <label for="bill" class="input-heading">Bill</label>
+          <label for="bill" class="input-heading"
+            >Bill <span class="invalid-text"></span
+          ></label>
           <div class="input-with-image">
             <input
               type="number"
@@ -52,13 +54,14 @@
               id="custom"
               maxlength="4"
               placeholder="Custom"
+              autocomplete="off"
             />
           </div>
         </div>
         <div class="number-of-people-container">
           <label for="number-of-people" class="input-heading"
-            >Number of People</label
-          >
+            >Number of People<span class="invalid-text"></span
+          ></label>
           <div class="input-with-image">
             <input
               id="number-of-people"
@@ -89,7 +92,7 @@
             <p class="result">$0.00</p>
           </div>
         </div>
-        <button class="btn btn-result active">Reset</button>
+        <button class="btn btn-result active" disabled>Reset</button>
       </div>
     </main>
 

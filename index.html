@@ -42,11 +42,11 @@
           <div class="button-grid">
             <button class="btn btn-tip">5%</button>
             <button class="btn btn-tip">10%</button>
-            <button class="btn btn-tip">15%</button>
+            <button class="btn btn-tip active">15%</button>
             <button class="btn btn-tip">25%</button>
             <button class="btn btn-tip">50%</button>
             <input
-              class="text-input btn"
+              class="text-input btn btn-input"
               type="text"
               name="custom"
               id="custom"
@@ -63,8 +63,11 @@
             <input
               id="number-of-people"
               class="text-input person-img"
-              type="text"
+              name="number-of-people"
+              type="number"
+              min="0"
               placeholder="0"
+              autocomplete="off"
             />
           </div>
         </div>
@@ -84,7 +87,7 @@
           </p>
           <p class="result"></p>
         </div>
-        <button class="btn">Reset</button>
+        <button class="btn btn-result active">Reset</button>
       </div>
     </main>
 

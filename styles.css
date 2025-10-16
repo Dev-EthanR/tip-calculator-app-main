@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+      --ff: "Space Mono", monospace;
+      --clr-error: rgb(225, 112, 82); /* Organe 400 */
+      --clr-primary: rgb(0, 71, 75);  /*Green 900 */
+      --clr-secondary: rgb(38, 194, 174); /*green 400 */
+      --clr-heading: rgb(61, 102, 102); /* Grey 600 */
+      --clr-hover: rgb(159, 232, 223); /* Green 200 */
+      --green-800: rgb(8, 92, 97);
+      --green-750: rgb(13, 104, 109);
+      --grey-550: rgb(82, 120, 120);
+      --grey-400: rgb(127, 157, 159);
+      --grey-300: rgb(158, 187, 189);
+      --grey-50: rgb(243, 249, 250);
+}

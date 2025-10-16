@@ -17,8 +17,55 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
+    <h1><img src="images/logo.svg" alt="SPLITTER" /></h1>
+
+    <main class="container">
+      <div class="input-calcs-container">
+        <div class="bill-container">
+          <label for="bill">Bill</label>
+          <input type="text" placeholder="0" maxlength="50" />
+        </div>
+        <div class="tip-container">
+          <p>Select Tip %</p>
+          <div class="button-grid">
+            <button class="btn btn-tip">5%</button>
+            <button class="btn btn-tip">10%</button>
+            <button class="btn btn-tip">15%</button>
+            <button class="btn btn-tip">25%</button>
+            <button class="btn btn-tip">50%</button>
+            <button class="btn">
+              <input
+                type="text"
+                name="custom"
+                id="custom"
+                maxlength="4"
+              />Custom
+            </button>
+          </div>
+        </div>
+        <div class="number-of-people-container">
+          <label for="number-of-people">Number of People</label>
+          <input type="text" placeholder="0" />
+        </div>
+      </div>
+      <div class="out-calcs-container">
+        <div class="tip-amount">
+          <p>
+            Tip Amount <br />
+            <span class="per-person">/ person</span>
+          </p>
+          <p class="result"></p>
+        </div>
+        <div class="tip-amount">
+          <p>
+            Total <br />
+            <span class="per-person">/ person</span>
+          </p>
+          <p class="result"></p>
+        </div>
+        <button class="btn">Reset</button>
+      </div>
+    </main>
 
     <script src="index.js"></script>
   </body>

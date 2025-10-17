@@ -5,7 +5,7 @@ const customTipButton = document.getElementById('custom');
 const tipElement = document.getElementById('tip-result');
 const totalElement = document.getElementById('total-result');
 
-let billValue, quantityValue, tipAmount;
+let billValue = 0, quantityValue = 1, tipAmount = 15;
 
 const errorStatus = {
     bill: false,
@@ -64,7 +64,7 @@ function toggleTipButton(currentButton) {
 }
 
 // Display Result
-function result(bill = 1, amountOfPeople = 1, tip = 15) {
+function result(bill, amountOfPeople, tip) {
     checkInput(billValue, 'bill');
     checkInput(quantityValue, 'quantity');
     if (Object.values(errorStatus).some(val => val)) return;

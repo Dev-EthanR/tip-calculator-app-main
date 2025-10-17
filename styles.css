@@ -189,14 +189,14 @@ h1 {
     color: var(--clr-primary);
 }
 
-.btn-result {
+.btn-reset {
     text-transform: uppercase;
 }
 
 .btn:disabled {
     background-color: var(--green-750);
     color: var(--green-800);
-    cursor: not-allowed;
+    cursor: default;
 }
 
 .btn:not(#custom):not(:disabled):hover,
@@ -228,6 +228,7 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     padding: 3.4rem 3.2rem;
+    overflow: hidden;
 }
 
 .tip-amount {

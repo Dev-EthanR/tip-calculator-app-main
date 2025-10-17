@@ -6,10 +6,11 @@ const tipElement = document.getElementById('tip-result');
 const totalElement = document.getElementById('total-result');
 
 let billValue, quantityValue, tipAmount;
+let error = false;
 
 const errorStatus = {
     bill: false,
-    quanity: false
+    quantity: false
 }
 // Bill
 bill.addEventListener('input', (event) => {
@@ -89,21 +90,20 @@ function resetButtonActivation(input) {
 // Check for valid input
 function checkInput(input, inputId) {
     if (input == '' || input == 0 || input <= 0.009) {
-        errorStatus[inputId] = true
+        errorStatus[inputId] = error = true
     } else {
-        errorStatus[inputId] = false
+        errorStatus[inputId] = error = false
     }
     changeVisualStatus()
 }
 
 // display any errors if input invalid
 function changeVisualStatus() {
-    console.log(errorStatus)
     let element;
     for (const key in errorStatus) {
         if (key === 'quantity') element = quantity;
         if (key === 'bill') element = bill;
-        if (Object.values(errorStatus).some(val => val)) {
+        if (error) {
             if (errorStatus[key]) {
                 element.parentNode.classList.remove('valid-input');
                 element.parentNode.classList.add('invalid-input');

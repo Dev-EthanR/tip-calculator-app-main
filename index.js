@@ -5,7 +5,7 @@ const customTipButton = document.getElementById('custom');
 const tipElement = document.getElementById('tip-result');
 const totalElement = document.getElementById('total-result');
 
-let billValue = 0, quantityValue = 1, tipAmount = 15;
+let billValue, quantityValue = 0, tipAmount = 15;
 
 const errorStatus = {
     bill: false,
@@ -14,7 +14,6 @@ const errorStatus = {
 // Bill
 bill.addEventListener('input', (event) => {
     billValue = parseFloat(event.target.value);
-    quantity.placeholder = 1;
     resetButtonActivation(billValue);
     result(billValue, quantityValue, tipAmount);
 });
@@ -135,7 +134,6 @@ function reset() {
     billValue = 0;
     quantityValue = 1;
     tipAmount = 15;
-    quantity.placeholder = 0;
     errorStatus.bill = false;
     errorStatus.quantity = false;
     changeVisualStatus();

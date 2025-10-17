@@ -14,7 +14,7 @@ const errorStatus = {
 }
 // Bill
 bill.addEventListener('input', (event) => {
-    billValue = event.target.value;
+    billValue = parseFloat(event.target.value);
     quantity.placeholder = 1;
     resetButtonActivation(billValue);
     result(billValue, quantityValue, tipAmount);
@@ -22,7 +22,7 @@ bill.addEventListener('input', (event) => {
 
 // Number of People
 quantity.addEventListener('input', (event) => {
-    quantityValue = event.target.value;
+    quantityValue = parseInt(event.target.value);
     resetButtonActivation(quantityValue);
     result(billValue, quantityValue, tipAmount);
 
@@ -99,10 +99,8 @@ function checkInput(input, inputId) {
 
 // display any errors if input invalid
 function changeVisualStatus() {
-    let element;
     for (const key in errorStatus) {
-        if (key === 'quantity') element = quantity;
-        if (key === 'bill') element = bill;
+        let element = key === 'quantity' ? quantity : bill;
         if (error) {
             if (errorStatus[key]) {
                 element.parentNode.classList.remove('valid-input');

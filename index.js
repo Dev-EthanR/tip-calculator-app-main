@@ -102,7 +102,7 @@ function changeVisualStatus() {
 
     for (const key in errorStatus) {
         let element = key === 'quantity' ? quantity : bill;
-        let label = element.parentElement.previousElementSibling.lastChild;
+        let label = document.getElementById(`${key}-error`);
 
         if (errorStatus[key]) {
             element.parentNode.classList.remove('valid-input');

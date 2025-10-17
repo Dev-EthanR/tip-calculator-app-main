@@ -41,7 +41,7 @@ tipButtons.forEach(tipButton => {
         customTipButton.value = ""
         toggleTipButton(tipButton)
         const tipPercent = tipButton.textContent;
-        tipButton.classList.toggle('active')
+        tipButton.classList.add('active')
         tipAmount = tip(tipPercent);
         result(billValue, quantityValue, tipAmount);
     })

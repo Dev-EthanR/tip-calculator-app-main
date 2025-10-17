@@ -149,12 +149,10 @@ h1 {
 }
 
 .valid-input {
-    border: 3px solid var(--clr-secondary);
-    border-radius: 5px;
+    outline: 3px solid var(--clr-secondary);
 }
 .invalid-input {
-    border: 3px solid var(--clr-error);
-    border-radius: 5px;
+    outline: 3px solid var(--clr-error);
 }
 .invalid-text {
     color: var(--clr-error);

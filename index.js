@@ -80,10 +80,7 @@ function result(bill = 1, amountOfPeople = 1, tip = 15) {
 
 // Toggle reset button enabled/disabled
 function resetButtonActivation(input) {
-    const resetButton = document.getElementById('reset');
-    if (input != '' && input != '0') return resetButton.disabled = false;
-    else return resetButton.disabled = true;
-
+    document.getElementById('reset').disabled = !(input && input != '0');
 }
 
 // Check for valid input

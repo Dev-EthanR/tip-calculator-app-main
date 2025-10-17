@@ -131,8 +131,7 @@ function reset() {
     customTipButton.value = '';
     tipElement.textContent = '$0.00';
     totalElement.textContent = '$0.00'
-    billValue = 0;
-    quantityValue = 1;
+    billValue, quantityValue = 0;
     tipAmount = 15;
     errorStatus.bill = false;
     errorStatus.quantity = false;

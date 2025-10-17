@@ -6,7 +6,6 @@ const tipElement = document.getElementById('tip-result');
 const totalElement = document.getElementById('total-result');
 
 let billValue, quantityValue, tipAmount;
-let error = false;
 
 const errorStatus = {
     bill: false,
@@ -90,35 +89,42 @@ function resetButtonActivation(input) {
 // Check for valid input
 function checkInput(input, inputId) {
     if (input == '' || input == 0 || input <= 0.009) {
-        errorStatus[inputId] = error = true
+        errorStatus[inputId] = true
     } else {
-        errorStatus[inputId] = error = false
+        errorStatus[inputId] = false
     }
     changeVisualStatus()
 }
 
 // display any errors if input invalid
 function changeVisualStatus() {
+    const hasErrors = Object.values(errorStatus).some(val => val);
+
     for (const key in errorStatus) {
         let element = key === 'quantity' ? quantity : bill;
-        if (error) {
-            if (errorStatus[key]) {
-                element.parentNode.classList.remove('valid-input');
-                element.parentNode.classList.add('invalid-input');
-                element.parentElement.previousElementSibling.lastChild.textContent = "Can't be zero";
-                tipElement.textContent = '$0.00';
-                totalElement.textContent = '$0.00'
-            } else {
-                element.parentElement.classList.add('valid-input');
-            }
-        } else if (!errorStatus[key]) {
+        let label = element.parentElement.previousElementSibling.lastChild;
+
+        if (errorStatus[key]) {
+            element.parentNode.classList.remove('valid-input');
+            element.parentNode.classList.add('invalid-input');
+            label.textContent = "Can't be zero";
+        } else {
             element.parentNode.classList.remove('invalid-input');
-            element.parentElement.previousElementSibling.lastChild.textContent = "";
-            element.parentElement.classList.remove('valid-input');
+            label.textContent = "";
+
+            if (hasErrors) {
+                element.parentNode.classList.add('valid-input');
+            } else {
+                element.parentNode.classList.remove('valid-input');
+            }
         }
     }
-}
 
+    if (hasErrors) {
+        tipElement.textContent = '$0.00';
+        totalElement.textContent = '$0.00';
+    }
+}
 // reset button
 function reset() {
     const defaultTip = document.getElementById('default-tip');

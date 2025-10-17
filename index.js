@@ -139,5 +139,8 @@ function reset() {
     quantityValue = 1;
     tipAmount = 15;
     quantity.placeholder = 0;
+    errorStatus.bill = false;
+    errorStatus.quantity = false;
+    changeVisualStatus();
     resetButtonActivation('');
 }
